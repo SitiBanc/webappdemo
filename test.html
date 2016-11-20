@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>BMI Calculator</title>
+		<!--Import Google Icon Font-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script>
+			function calBMI() {
+				var h = document.getElementById("inputHeight").value;
+				h = h / 100; //公分換算為公尺
+				var w = document.getElementById("inputWeight").value;
+				var g = document.getElementById("RadiosF").checked;
+				var BMI = w / (h * h);
+				BMI = BMI.toFixed(2);
+				
+				if(g)//Female
+					document.getElementById("yourBMI").innerHTML = "妳的BMI為：" + BMI;
+				else//Male
+					document.getElementById("yourBMI").innerHTML = "你的BMI為：" + BMI;
+				
+				if (BMI < 18) { //過輕
+					var min_standard_w = 18 * h * h;
+					min_standard_w -= w;
+					min_standard_w = min_standard_w.toFixed(2);
+					document.getElementById("card_img").src = "http://materializecss.com/images/office.jpg";
+					var title = document.getElementsByClassName("card-title");
+					title[0].innerHTML = "過輕";
+					document.getElementById("card_info").innerHTML = "離標準體重還差" + min_standard_w + "公斤！";
+					document.getElementById("result_card").style.display = "block";
+					
+				} else if (BMI < 24) { //標準
+					document.getElementById("result_card").style.display = "block";
+				} else if (BMI < 27) { //過重
+					var max_standard_w = 24 * h * h;
+					max_standard_w = w - max_standard_w;
+					max_standard_w = max_standard_w.toFixed(2);
+					document.getElementById("card_img").src = "http://materializecss.com/images/sample-1.jpg";
+					var title = document.getElementsByClassName("card-title");
+					title[0].innerHTML = "過重";
+					document.getElementById("card_info").innerHTML = "離標準體重還差" + max_standard_w + "公斤！";
+					document.getElementById("result_card").style.display = "block";
+				} else { //肥胖
+					var max_overweight = 27 * h * h;
+					max_overweight = w - max_overweight;
+					max_overweight = max_overweight.toFixed(2);
+					document.getElementById("card_img").src = "http://wdy.h-cdn.co/assets/15/16/1600x800/landscape-1429039062-overweight-woman.jpg";
+					var title = document.getElementsByClassName("card-title");
+					title[0].innerHTML = "肥胖";
+					document.getElementById("card_info").innerHTML = "離過重體重還差" + max_overweight + "公斤！";
+					document.getElementById("result_card").style.display = "block";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<nav>
+			<div class="nav-wrapper teal">
+				<a href="#!" class="breadcrumb">Daily Fit</a>
+				<a href="#!" class="breadcrumb">BMI Calculator</a>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="col s12 m4 l2">&nbsp;</div>
+			<div class="col s12 m4 l8">
+				<p>
+					<label>性別</label><br/>
+					<input type="radio" name="gender" id="RadiosF" value="female" checked>
+					<label for="RadiosF">女</label>
+					<input type="radio" name="gender" id="RadiosM" value="male">
+					<label for="RadiosM">男</label>
+				</p>
+				<p class="range-field">
+					<label for="inputHeight">身高</label>
+					<input type="range" id="inputHeight" min="100" max="200" />
+				</p>
+				<p class="range-field">
+					<label for="inputWeight">體重</label>
+					<input type="range" id="inputWeight" min="20" max="150" />
+				</p>
+				<button class="btn waves-effect waves-light" type="submit" name="action" onclick="javascript:calBMI()">
+					Submit<i class="material-icons right">send</i>
+				</button>
+			</div>
+			<div class="col s12 m4 l2">&nbsp;</div>
+			<div class="row">
+				<div class="col s12 m4 l8">
+					<div id="result_card" class="card medium" style="display:none">
+						<div class="card-image">
+							<img id="card_img" src="http://materializecss.com/images/sample-1.jpg">
+							<span class="card-title">標準</span>
+						</div>
+						<div class="card-content">
+							<p id="yourBMI"></p>
+							<p id="card_info">標準BMI</p>
+						</div>
+						<div class="card-action">
+							<a href="#">This is a link</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="page-footer teal">
+			<div class="footer-copyright">
+				<div class="container">
+					MIT License
+					<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+				</div>
+			</div>
+        </footer>
+	</body>
+</html>

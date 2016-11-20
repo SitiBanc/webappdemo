@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test Collections</title>
+		<!--Import Google Icon Font-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+
+	<body>
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<nav>
+			<div class="nav-wrapper orange">
+				<img src="images/logo.jpg" class="brand-logo"/>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="#">About</a></li>
+					<li class="active"><a href="#">Products</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="col s12 m4">&nbsp;</div>
+			<div class="col s12 m4">
+				<ul id="display" class="collection z-depth-4"></ul>
+			</div>
+			<div class="col s12 m4">&nbsp;</div>
+		</div>
+		<script>
+			//JSON Array
+			var list = [
+					{"pic":"http://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1466581943.95968760.jpg","title":"小米行動電源 10000 高配版","content":"NT$795","link":"http://www.mi.com/tw/pb10000pro"},
+					{"pic":"http://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/T1suYgB_xT1RXrhCrK.jpg","title":"小蟻智慧攝影機","content":"NT$999","link":"http://www.mi.com/tw/yiwebcam"},
+					{"pic":"http://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1476846741.05239231.jpg","title":"小米盒子","content":"NT$1999","link":"http://www.mi.com/tw/mibox"},
+					{"pic":"http://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/T1a8WgBm_v1RXrhCrK.jpg","title":"小米手環（光感版）","content":"$595","link":"http://www.mi.com/tw/miband"},
+					{"pic":"http://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1478488705.40559753.png","title":"小米圈鐵耳機 Pro","content":"NT$765","link":"http://buy.mi.com/tw/item/3164400007"}
+				];
+			var str = "";
+			var i;
+			for (i = 0 ; i < list.length ; i++){
+				str += "<li class='collection-item avatar dismissable'>";
+				str += "<img src='" + list[i].pic + "' class='circle'/>";
+				str += "<span class='title'>" + list[i].title + "</span>";
+				str += "<p class='red-text'>" + list[i].content + "</p>";
+				str += "<a href='" + list[i].link + "' class='secondary-content'><i class='material-icons orange-text'>chevron_right</i></a>";
+				str += "</li>";
+			}
+			document.getElementById("display").innerHTML = str;
+		</script>
+		<footer class="page-footer orange">
+			<div class="footer-copyright">
+				<div class="container">
+					MIT License
+					<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+				</div>
+			</div>
+        </footer>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test Collections</title>
+		<!--Import Google Icon Font-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+
+	<body>
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<nav>
+			<div class="nav-wrapper teal">
+				<a href="#!" class="breadcrumb">Daily Fit</a>
+				<a href="#!" class="breadcrumb">BMI Calculator</a>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="col s12 m4">&nbsp;</div>
+			<div class="col s12 m4">
+				<ul id="display" class="collection"></ul>
+			</div>
+			<div class="col s12 m4">&nbsp;</div>
+		</div>
+		<script>
+			//JSON Array
+			var list = [
+					{"pic":"http://ec1img.pchome.com.tw/pic/v1/data/item/201611/D/G/C/D/1/E/sDGCD1E-A9007MMMG000_581c54d3a806a.jpg","title":"SanDisk Extreme USB 3.0 64GB 高速隨身碟CZ80(公司貨) 245MB/s","content":"$1599","link":"http://24h.m.pchome.com.tw/prod/DGCD1E-A9007MMMG"},
+					{"pic":"http://ec1img.pchome.com.tw/pic/v1/data/item/201610/D/G/C/D/1/C/sDGCD1C-A9007L510000_5809eac0a8d9d.jpg","title":"PhotoFast i-FlashDrive MAX GEN2 iPhone/iPad隨身碟32GB","content":"$1799","link":"http://24h.m.pchome.com.tw/prod/DGCD1C-A9007L510"},
+					{"pic":"http://ec1img.pchome.com.tw/pic/v1/data/item/201405/D/G/A/G/4/E/sDGAG4E-A90055M4P000_53881854532b5.jpg","title":"▼每日強檔‧瘋殺特賣▼TCELL 冠元-USB3.0 128GB Hide & Seek","content":"$999","link":"http://24h.m.pchome.com.tw/prod/DGAG4E-A90055M4P"},
+					{"pic":"http://ec1img.pchome.com.tw/pic/v1/data/item/201606/D/G/C/D/1/E/sDGCD1E-A9006TA7R000_575fc4730b2d4.jpg","title":"SanDisk Ultra Dual OTG 雙傳輸 USB 3.0 隨身碟 128GB (公司貨) 150MB傳輸","content":"$1299","link":"http://24h.m.pchome.com.tw/prod/DGCD1E-A9006TA7R"},
+					{"pic":"http://ec1img.pchome.com.tw/pic/v1/data/item/201606/D/G/C/D/1/E/sDGCD1E-A90079RVH000_5767512de57f4.jpg","title":"SanDisk Ultra Dual OTG 雙傳輸 USB 3.0 隨身碟 64GB (公司貨) 150MB傳輸","content":"$649","link":"http://24h.m.pchome.com.tw/prod/DGCD1E-A90079RVH"}
+				];
+			var str = "";
+			var i;
+			for (i = 0 ; i < list.length ; i++){
+				str += "<li class='collection-item avatar'>";
+				str += "<img src='" + list[i].pic + "' class='circle'/>";
+				str += "<span class='title'>" + list[i].title + "</span>";
+				str += "<p>" + list[i].content + "</p>";
+				str += "<a href='" + list[i].link + "' class='secondary-content'><i class='material-icons'>chevron_right</i></a>";
+				str += "</li>";
+			}
+			document.getElementById("display").innerHTML = str;
+		</script>
+		<footer class="page-footer teal">
+			<div class="footer-copyright">
+				<div class="container">
+					MIT License
+					<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+				</div>
+			</div>
+        </footer>
+	</body>
+</html>
