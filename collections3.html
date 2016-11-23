@@ -1,0 +1,867 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test Collections</title>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+
+	<body>
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<nav>
+			<div class="nav-wrapper orange">
+				<img src="images/logo.jpg" class="brand-logo"/>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="#">About</a></li>
+					<li class="active"><a href="#">Products</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="col s12 m4">&nbsp;</div>
+			<div class="col s12 m4">
+				<ul id="display" class="collection z-depth-4"></ul>
+			</div>
+			<div class="col s12 m4">&nbsp;</div>
+		</div>
+		<script>
+			//JSON Array
+			var list = [
+				{
+					"id": "336735314",
+					"public_at": "1479240544",
+					"site_category": "電影評論",
+					"site_category_id": "19",
+					"sub_site_category": "視聽娛樂",
+					"sub_site_category_id": "31",
+					"category": "影評人",
+					"category_id": "2692470",
+					"link": "http:\/\/quentin1012.pixnet.net\/blog\/post\/336735314-%e3%80%90%e5%bd%b1%e8%a9%95%e4%ba%ba%e3%80%91%e6%80%aa%e7%8d%b8%e8%88%87%e7%89%a0%e5%80%91%e7%9a%84%e7%94%a2%e5%9c%b0%e3%80%80%e3%80%80%e6%9c%89%e6%a9%9f%e6%9c%83%e5%87%8c%e9%a7%95",
+					"status": "2",
+					"is_top": "0",
+					"is_nl2br": "0",
+					"comment_perm": "1",
+					"comment_hidden": "0",
+					"summary": "\n\n&nbsp;\n\n&nbsp;\n\n　　",
+					"title": "【影評人】怪獸與牠們的產地　　有機會凌駕哈利波特",
+					"thumb": "https:\/\/s.pimg.tw\/album\/quentin1012\/element\/667118667_1479240960-1483839482\/zoomcrop\/90x90.jpg",
+					"cover": "",
+					"hits": {
+						"total": 43773,
+						"daily": 913
+					},
+					"info": {
+						"trackbacks_count": 0,
+						"comments_count": 9,
+						"hit": 43773
+					},
+					"hit_uri": "\/\/counter.pixplug.in\/count.php?timestamp=1479865057&random=2253571609&check=2704257332&no_timeout=2&data[blogarticle]=%7B%22blogid%22%3A%225107720%22%2C%22articleid%22%3A%22336735314%22%2C%22no_timeout%22%3A2%7D",
+					"sns": {
+						"twitter": null,
+						"facebook": null,
+						"plurk": null
+					},
+					"tags": [
+						{
+							"tag": "怪獸與牠們的產地",
+							"locked": 0,
+							"added_by": "quentin1012"
+						},
+						{
+							"tag": "哈利波特",
+							"locked": 0,
+							"added_by": "quentin1012"
+						},
+						{
+							"tag": "J.K.羅琳",
+							"locked": 0,
+							"added_by": "quentin1012"
+						},
+						{
+							"tag": "艾迪瑞德曼",
+							"locked": 0,
+							"added_by": "quentin1012"
+						},
+						{
+							"tag": "怪奇孤兒院",
+							"locked": 0,
+							"added_by": "quentin1012"
+						},
+						{
+							"tag": "昆汀涂",
+							"locked": 0,
+							"added_by": "quentin1012"
+						}
+					],
+					"user": {
+						"name": "quentin1012",
+						"display_name": "昆汀‧涂",
+						"avatar": "https:\/\/s.pimg.tw\/avatar\/quentin1012\/0\/0\/resize\/90x0.png?v=1401647609",
+						"cavatar": "https:\/\/s.pimg.tw\/avatar\/quentin1012\/0\/0\/zoomcrop\/90x90.png?v=1401647609",
+						"link": "http:\/\/quentin1012.pixnet.net",
+						"is_vip": false,
+						"has_ad": true
+					}
+				},
+				{
+					"id": "394580305",
+					"public_at": "1473510345",
+					"site_category": "電影評論",
+					"site_category_id": "19",
+					"sub_site_category": "電玩動漫",
+					"sub_site_category_id": "21",
+					"category": "電影評論",
+					"category_id": "3858898",
+					"link": "http:\/\/comeda13.pixnet.net\/blog\/post\/394580305-%e3%80%90%e5%bd%b1%e8%a9%95%e3%80%91%e5%90%9b%e3%81%ae%e5%90%8d%e3%81%af%e3%80%82%e4%bd%a0%e7%9a%84%e5%90%8d%e5%ad%97-%e4%b8%80%e7%9b%b4%e5%b0%8b%e6%89%be%e7%9a%84%e4%ba%ba",
+					"status": "2",
+					"is_top": "0",
+					"is_nl2br": "0",
+					"comment_perm": "1",
+					"comment_hidden": "0",
+					"summary": "\n\n會有劇透注意####我這邊要把故事重",
+					"title": "【影評+劇透】君の名は。你的名字 一直尋找的人",
+					"thumb": "https:\/\/s.pimg.tw\/album\/comeda13\/element\/660019973_1473510459-1908709909\/zoomcrop\/90x90.jpg",
+					"cover": "",
+					"hits": {
+						"total": 154281,
+						"daily": 593
+					},
+					"info": {
+						"trackbacks_count": 0,
+						"comments_count": 47,
+						"hit": 154281
+					},
+					"hit_uri": "\/\/counter.pixplug.in\/count.php?timestamp=1479865057&random=4153605682&check=3139544243&no_timeout=2&data[blogarticle]=%7B%22blogid%22%3A%225469643%22%2C%22articleid%22%3A%22394580305%22%2C%22no_timeout%22%3A2%7D",
+					"sns": {
+						"twitter": null,
+						"facebook": null,
+						"plurk": null
+					},
+					"tags": [
+						{
+							"tag": "你的名字",
+							"locked": 0,
+							"added_by": "comeda13"
+						},
+						{
+							"tag": "新海誠",
+							"locked": 0,
+							"added_by": "comeda13"
+						},
+						{
+							"tag": "神木隆之介",
+							"locked": 0,
+							"added_by": "comeda13"
+						}
+					],
+					"user": {
+						"name": "comeda13",
+						"display_name": "OTHOH",
+						"avatar": "https:\/\/s3.pimg.tw\/avatar\/comeda13\/0\/0\/resize\/90x0.png?v=1427244967",
+						"cavatar": "https:\/\/s3.pimg.tw\/avatar\/comeda13\/0\/0\/zoomcrop\/90x90.png?v=1427244967",
+						"link": "http:\/\/comeda13.pixnet.net",
+						"is_vip": false,
+						"has_ad": true
+					}
+				},
+				{
+					"id": "140880753",
+					"public_at": "1363359895",
+					"site_category": "電影評論",
+					"site_category_id": "19",
+					"sub_site_category": "未選擇",
+					"sub_site_category_id": "-1",
+					"category": "萌萌看電影",
+					"category_id": "1793021",
+					"link": "http:\/\/menghsuan37.pixnet.net\/blog\/post\/140880753",
+					"status": "2",
+					"is_top": "0",
+					"is_nl2br": "0",
+					"comment_perm": "1",
+					"comment_hidden": "0",
+					"summary": " &nbsp;\r\n第一次搶到電影特映會的",
+					"title": "《口碑券。第五彈》【奧茲大帝】帶你一起進入神秘奧茲國度展開奇幻冒險",
+					"thumb": "https:\/\/s8.pimg.tw\/album\/menghsuan37\/element\/64100738_1363198465-3007476795\/zoomcrop\/90x90.jpg",
+					"cover": "",
+					"hits": {
+						"total": 15150,
+						"daily": 604
+					},
+					"info": {
+						"trackbacks_count": 0,
+						"comments_count": 2,
+						"hit": 15150
+					},
+					"hit_uri": "\/\/counter.pixplug.in\/count.php?timestamp=1479865057&random=949346326&check=95298261&no_timeout=2&data[blogarticle]=%7B%22blogid%22%3A%223556671%22%2C%22articleid%22%3A%22140880753%22%2C%22no_timeout%22%3A2%7D",
+					"sns": {
+						"twitter": null,
+						"facebook": null,
+						"plurk": null
+					},
+					"tags": [
+						{
+							"tag": "女巫",
+							"locked": 0,
+							"added_by": "menghsuan37"
+						},
+						{
+							"tag": "三位",
+							"locked": 0,
+							"added_by": "menghsuan37"
+						},
+						{
+							"tag": "坐得",
+							"locked": 0,
+							"added_by": "menghsuan37"
+						},
+						{
+							"tag": "角色",
+							"locked": 0,
+							"added_by": "menghsuan37"
+						},
+						{
+							"tag": "成名",
+							"locked": 0,
+							"added_by": "menghsuan37"
+						},
+						{
+							"tag": "詹姆斯",
+							"locked": 0,
+							"added_by": "menghsuan37"
+						},
+						{
+							"tag": "故事",
+							"locked": 0,
+							"added_by": "menghsuan37"
+						},
+						{
+							"tag": "comingsoon",
+							"locked": 0,
+							"added_by": "menghsuan37"
+						},
+						{
+							"tag": "女星",
+							"locked": 0,
+							"added_by": "menghsuan37"
+						},
+						{
+							"tag": "xd",
+							"locked": 0,
+							"added_by": "menghsuan37"
+						}
+					],
+					"user": {
+						"name": "menghsuan37",
+						"display_name": "☆萌萌★",
+						"avatar": "https:\/\/s1.pimg.tw\/avatar\/menghsuan37\/0\/0\/resize\/90x0.png?v=1441954569",
+						"cavatar": "https:\/\/s1.pimg.tw\/avatar\/menghsuan37\/0\/0\/zoomcrop\/90x90.png?v=1441954569",
+						"link": "http:\/\/menghsuan37.pixnet.net",
+						"is_vip": false,
+						"has_ad": true
+					}
+				},
+				{
+					"id": "27066530",
+					"public_at": "1297834340",
+					"site_category": "電影評論",
+					"site_category_id": "19",
+					"sub_site_category": "未選擇",
+					"sub_site_category_id": "-1",
+					"category": "電影心得",
+					"category_id": "597725",
+					"link": "http:\/\/tippi1219.pixnet.net\/blog\/post\/27066530",
+					"status": "2",
+					"is_top": "0",
+					"is_nl2br": "0",
+					"comment_perm": "1",
+					"comment_hidden": "0",
+					"summary": "&nbsp;\r\n不得不先給導演-姜文一堆",
+					"title": "深度電影-讓子彈飛",
+					"thumb": "https:\/\/s9.pimg.tw\/album\/tippi1219\/element\/136689909_6c523b6b3a5fb9cd2123dc54f4958938\/zoomcrop\/90x90.jpg",
+					"cover": "",
+					"hits": {
+						"total": 170087,
+						"daily": 468
+					},
+					"info": {
+						"trackbacks_count": 15,
+						"comments_count": 15,
+						"hit": 170087
+					},
+					"hit_uri": "\/\/counter.pixplug.in\/count.php?timestamp=1479865057&random=2167876322&check=498017084&no_timeout=2&data[blogarticle]=%7B%22blogid%22%3A%222539337%22%2C%22articleid%22%3A%2227066530%22%2C%22no_timeout%22%3A2%7D",
+					"sns": {
+						"twitter": null,
+						"facebook": null,
+						"plurk": null
+					},
+					"tags": [],
+					"user": {
+						"name": "Tippi1219",
+						"display_name": "漂亮小姐",
+						"avatar": "https:\/\/s7.pimg.tw\/avatar\/tippi1219\/0\/0\/resize\/90x0.png?v=1284129550",
+						"cavatar": "https:\/\/s7.pimg.tw\/avatar\/tippi1219\/0\/0\/zoomcrop\/90x90.png?v=1284129550",
+						"link": "http:\/\/tippi1219.pixnet.net",
+						"is_vip": false,
+						"has_ad": true
+					}
+				},
+				{
+					"id": "41897839",
+					"public_at": "1420690138",
+					"site_category": "電影評論",
+					"site_category_id": "19",
+					"sub_site_category": "未選擇",
+					"sub_site_category_id": "-1",
+					"category": "電影心得",
+					"category_id": "1536840",
+					"link": "http:\/\/dinosaurs.pixnet.net\/blog\/post\/41897839-%e3%80%8a%e6%83%85%e6%85%be%e8%aa%98%e6%83%91%e3%80%8b%e6%84%9b%e6%81%a8%e5%90%8c%e5%ad%98%e7%9a%84%e8%a4%87%e9%9b%9c%e6%83%85%e6%84%9f",
+					"status": "2",
+					"is_top": "0",
+					"is_nl2br": "0",
+					"comment_perm": "1",
+					"comment_hidden": "0",
+					"summary": "\r\n마담 뺑덕&nbsp;(情慾誘惑) ",
+					"title": "《情慾誘惑》愛恨同存的複雜情感",
+					"thumb": "https:\/\/s.pimg.tw\/album\/dinosaurs\/element\/293317962_1420717823-1141789488\/zoomcrop\/90x90.jpg",
+					"cover": "",
+					"hits": {
+						"total": 49970,
+						"daily": 441
+					},
+					"info": {
+						"trackbacks_count": 0,
+						"comments_count": 0,
+						"hit": 49970
+					},
+					"hit_uri": "\/\/counter.pixplug.in\/count.php?timestamp=1479865057&random=3654795256&check=2005162377&no_timeout=2&data[blogarticle]=%7B%22blogid%22%3A%221912893%22%2C%22articleid%22%3A%2241897839%22%2C%22no_timeout%22%3A2%7D",
+					"sns": {
+						"twitter": null,
+						"facebook": null,
+						"plurk": null
+					},
+					"tags": [
+						{
+							"tag": "特映會",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "마담 뺑덕",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "情慾誘惑",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "布拉芙夫人",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "Scarlet Innocence",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "林弼成",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "張潤美",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "鄭雨盛",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "李絮",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "朴素英",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "金希沅",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "楊鎮宇",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "尹世雅",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "朴素丹",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "金南真",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "李昌勛",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "朴書妍",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "劉成國",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "金子英",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						},
+						{
+							"tag": "劉順雄",
+							"locked": 0,
+							"added_by": "dinosaurs"
+						}
+					],
+					"user": {
+						"name": "dinosaurs",
+						"display_name": "闕小豪",
+						"avatar": "https:\/\/s3.pimg.tw\/avatar\/dinosaurs\/0\/0\/resize\/90x0.png?v=1470377543",
+						"cavatar": "https:\/\/s3.pimg.tw\/avatar\/dinosaurs\/0\/0\/zoomcrop\/90x90.png?v=1470377543",
+						"link": "http:\/\/dinosaurs.pixnet.net",
+						"is_vip": false,
+						"has_ad": true
+					}
+				},
+				{
+					"id": "44279035",
+					"public_at": "1475553674",
+					"site_category": "電影評論",
+					"site_category_id": "19",
+					"sub_site_category": "未選擇",
+					"sub_site_category_id": "-1",
+					"category": "陸劇陸綜",
+					"category_id": "1867579",
+					"link": "http:\/\/chang162015.pixnet.net\/blog\/post\/44279035-%e9%99%b8%e7%b6%9c%e3%80%90%e9%bb%83%e9%87%91%e5%96%ae%e8%ba%ab%e6%bc%a2%e3%80%91%e9%99%b3%e6%a5%9a%e6%b2%b3%e5%8f%88%e9%96%8b%e5%a7%8b%e6%b6%88%e6%a5%ad%e9%9a%9c%e4%ba%86%e2%8b%af",
+					"status": "2",
+					"is_top": "1",
+					"is_nl2br": "0",
+					"comment_perm": "1",
+					"comment_hidden": "0",
+					"summary": "\r\n我才剛結束非凡搭擋的渡劫馬上又迎來黃",
+					"title": "陸綜【黃金單身漢】陳楚河又開始消業障了⋯嗎？ EP1-8 11\/22",
+					"thumb": "https:\/\/pic.pimg.tw\/chang162015\/1475501074-1766822114.jpg?v=1475501076",
+					"cover": "https:\/\/pic.pimg.tw\/chang162015\/1475501074-1766822114.jpg?v=1475501076",
+					"hits": {
+						"total": 70005,
+						"daily": 355
+					},
+					"info": {
+						"trackbacks_count": 0,
+						"comments_count": 356,
+						"hit": 70005
+					},
+					"hit_uri": "\/\/counter.pixplug.in\/count.php?timestamp=1479865057&random=3757041042&check=4267200975&no_timeout=2&data[blogarticle]=%7B%22blogid%22%3A%22228840%22%2C%22articleid%22%3A%2244279035%22%2C%22no_timeout%22%3A2%7D",
+					"sns": {
+						"twitter": null,
+						"facebook": null,
+						"plurk": null
+					},
+					"tags": [],
+					"user": {
+						"name": "chang162015",
+						"display_name": "溏",
+						"avatar": "https:\/\/s.pimg.tw\/avatar\/chang162015\/0\/0\/resize\/90x0.png?v=1394727227",
+						"cavatar": "https:\/\/s.pimg.tw\/avatar\/chang162015\/0\/0\/zoomcrop\/90x90.png?v=1394727227",
+						"link": "http:\/\/chang162015.pixnet.net",
+						"is_vip": false,
+						"has_ad": true
+					}
+				},
+				{
+					"id": "108810559",
+					"public_at": "1421171665",
+					"site_category": "電影評論",
+					"site_category_id": "19",
+					"sub_site_category": "未選擇",
+					"sub_site_category_id": "-1",
+					"category": "2014年電影",
+					"category_id": "3125605",
+					"link": "http:\/\/allen201242002.pixnet.net\/blog\/post\/108810559",
+					"status": "2",
+					"is_top": "0",
+					"is_nl2br": "0",
+					"comment_perm": "1",
+					"comment_hidden": "0",
+					"summary": " &nbsp;\r\n在韓國，以禁忌的愛情做",
+					"title": "《情慾誘惑》：教授不小心滑進來惹",
+					"thumb": "https:\/\/s5.pimg.tw\/album\/allen201242002\/element\/185820795_1421171436-1383956459\/zoomcrop\/90x90.jpg",
+					"cover": "",
+					"hits": {
+						"total": 17293,
+						"daily": 278
+					},
+					"info": {
+						"trackbacks_count": 0,
+						"comments_count": 1,
+						"hit": 17293
+					},
+					"hit_uri": "\/\/counter.pixplug.in\/count.php?timestamp=1479865057&random=2447531275&check=532858033&no_timeout=2&data[blogarticle]=%7B%22blogid%22%3A%222988880%22%2C%22articleid%22%3A%22108810559%22%2C%22no_timeout%22%3A2%7D",
+					"sns": {
+						"twitter": null,
+						"facebook": null,
+						"plurk": null
+					},
+					"tags": [
+						{
+							"tag": "情慾誘惑",
+							"locked": 0,
+							"added_by": "allen201242002"
+						},
+						{
+							"tag": "鄭雨盛",
+							"locked": 0,
+							"added_by": "allen201242002"
+						},
+						{
+							"tag": "李絮",
+							"locked": 0,
+							"added_by": "allen201242002"
+						},
+						{
+							"tag": "2014年",
+							"locked": 0,
+							"added_by": "allen201242002"
+						},
+						{
+							"tag": "電影",
+							"locked": 0,
+							"added_by": "allen201242002"
+						},
+						{
+							"tag": "Scarlet Innocence",
+							"locked": 0,
+							"added_by": "allen201242002"
+						}
+					],
+					"user": {
+						"name": "allen201242002",
+						"display_name": "癮評倫 ALLEN",
+						"avatar": "https:\/\/s.pimg.tw\/avatar\/allen201242002\/0\/0\/resize\/90x0.png?v=1354468283",
+						"cavatar": "https:\/\/s.pimg.tw\/avatar\/allen201242002\/0\/0\/zoomcrop\/90x90.png?v=1354468283",
+						"link": "http:\/\/allen201242002.pixnet.net",
+						"is_vip": false,
+						"has_ad": true
+					}
+				},
+				{
+					"id": "329784177",
+					"public_at": "1468575639",
+					"site_category": "電影評論",
+					"site_category_id": "19",
+					"sub_site_category": "藝文評論",
+					"sub_site_category_id": "17",
+					"category": "看看電影",
+					"category_id": "1957640",
+					"link": "http:\/\/w8203225.pixnet.net\/blog\/post\/329784177-%e3%80%90%e5%bd%b1%e8%a9%95%e3%80%91%e4%ba%ba%e7%94%9f%e5%b9%be%e4%bd%95---%e5%85%ad%e5%bc%84%e5%92%96%e5%95%a1%e9%a4%a8",
+					"status": "2",
+					"is_top": "0",
+					"is_nl2br": "0",
+					"comment_perm": "1",
+					"comment_hidden": "0",
+					"summary": "&nbsp;\n\n&nbsp;\n\n“人長大",
+					"title": "【影評】人生幾何 \/ 六弄咖啡館",
+					"thumb": "https:\/\/s6.pimg.tw\/album\/w8203225\/element\/653483396_1468577624-68006623\/zoomcrop\/90x90.jpg",
+					"cover": "",
+					"hits": {
+						"total": 54383,
+						"daily": 237
+					},
+					"info": {
+						"trackbacks_count": 0,
+						"comments_count": 11,
+						"hit": 54383
+					},
+					"hit_uri": "\/\/counter.pixplug.in\/count.php?timestamp=1479865057&random=3260482314&check=1064923050&no_timeout=2&data[blogarticle]=%7B%22blogid%22%3A%224942917%22%2C%22articleid%22%3A%22329784177%22%2C%22no_timeout%22%3A2%7D",
+					"sns": {
+						"twitter": null,
+						"facebook": "1065766303512346",
+						"plurk": null
+					},
+					"tags": [
+						{
+							"tag": "六弄咖啡館",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "藤井樹",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "吳子雲",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "網路小說",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "商周出版",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "董子健",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "顏卓靈",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "林柏宏",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "歐陽妮妮",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "戴立忍",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "人生",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "難題",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "電影",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "國片",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "青春愛情",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "校園",
+							"locked": 0,
+							"added_by": "w8203225"
+						},
+						{
+							"tag": "影評",
+							"locked": 0,
+							"added_by": "w8203225"
+						}
+					],
+					"user": {
+						"name": "w8203225",
+						"display_name": "See! Goldfish",
+						"avatar": "https:\/\/s7.pimg.tw\/avatar\/w8203225\/0\/0\/resize\/90x0.png?v=1470877474",
+						"cavatar": "https:\/\/s7.pimg.tw\/avatar\/w8203225\/0\/0\/zoomcrop\/90x90.png?v=1470877474",
+						"link": "http:\/\/w8203225.pixnet.net",
+						"is_vip": false,
+						"has_ad": true
+					}
+				},
+				{
+					"id": "171348406",
+					"public_at": "1407751001",
+					"site_category": "電影評論",
+					"site_category_id": "19",
+					"sub_site_category": "未選擇",
+					"sub_site_category_id": "-1",
+					"category": "電影心得",
+					"category_id": "2810302",
+					"link": "http:\/\/missgiagai.pixnet.net\/blog\/post\/171348406",
+					"status": "2",
+					"is_top": "0",
+					"is_nl2br": "0",
+					"comment_perm": "1",
+					"comment_hidden": "0",
+					"summary": " &nbsp;&nbsp;\r\n昨天看完『",
+					"title": "看第二次才知道他很好看的性愛成癮的女人",
+					"thumb": "https:\/\/s.pimg.tw\/album\/missgiagai\/element\/546388951_1411108312-4069198701\/zoomcrop\/90x90.jpg",
+					"cover": "",
+					"hits": {
+						"total": 219433,
+						"daily": 168
+					},
+					"info": {
+						"trackbacks_count": 0,
+						"comments_count": 7,
+						"hit": 219433
+					},
+					"hit_uri": "\/\/counter.pixplug.in\/count.php?timestamp=1479865057&random=1976674578&check=1230451144&no_timeout=2&data[blogarticle]=%7B%22blogid%22%3A%225037869%22%2C%22articleid%22%3A%22171348406%22%2C%22no_timeout%22%3A2%7D",
+					"sns": {
+						"twitter": null,
+						"facebook": null,
+						"plurk": null
+					},
+					"tags": [],
+					"user": {
+						"name": "missgiagai",
+						"display_name": "missgaigai",
+						"avatar": "https:\/\/s9.pimg.tw\/avatar\/missgiagai\/0\/0\/resize\/90x0.png?v=1442158189",
+						"cavatar": "https:\/\/s9.pimg.tw\/avatar\/missgiagai\/0\/0\/zoomcrop\/90x90.png?v=1442158189",
+						"link": "http:\/\/missgiagai.pixnet.net",
+						"is_vip": false,
+						"has_ad": true
+					}
+				},
+				{
+            "id": "92293804",
+            "public_at": "1368947633",
+            "site_category": "電影評論",
+            "site_category_id": "19",
+            "sub_site_category": "未選擇",
+            "sub_site_category_id": "-1",
+            "category": "香港、中國",
+            "category_id": "4498850",
+            "link": "http:\/\/umecogo.pixnet.net\/blog\/post\/92293804-let_thebulletsfly",
+            "status": "2",
+            "is_top": "0",
+            "is_nl2br": "0",
+            "comment_perm": "1",
+            "comment_hidden": "0",
+            "summary": "本文引用自Tippi1219 - 深度電",
+            "title": "讓子彈飛》完全姜文神作Let the Bullets Fly會再看一次的電影",
+            "thumb": "https:\/\/s.pimg.tw\/album\/umecogo\/element\/74689586_1368942293-793868786\/zoomcrop\/90x90.jpg",
+            "cover": "",
+            "hits": {
+                "total": 23773,
+                "daily": 173
+            },
+            "info": {
+                "trackbacks_count": 0,
+                "comments_count": 3,
+                "hit": 23773
+            },
+            "hit_uri": "\/\/counter.pixplug.in\/count.php?timestamp=1479865057&random=1164209373&check=154796193&no_timeout=2&data[blogarticle]=%7B%22blogid%22%3A%223989754%22%2C%22articleid%22%3A%2292293804%22%2C%22no_timeout%22%3A2%7D",
+            "sns": {
+                "twitter": null,
+                "facebook": null,
+                "plurk": null
+            },
+            "tags": [
+                {
+                    "tag": "Let the Bullets Fly",
+                    "locked": 0,
+                    "added_by": "umecogo"
+                },
+                {
+                    "tag": "讓子彈飛",
+                    "locked": 0,
+                    "added_by": "umecogo"
+                },
+                {
+                    "tag": "姜文",
+                    "locked": 0,
+                    "added_by": "umecogo"
+                },
+                {
+                    "tag": "葛優",
+                    "locked": 0,
+                    "added_by": "umecogo"
+                },
+                {
+                    "tag": "周潤發",
+                    "locked": 0,
+                    "added_by": "umecogo"
+                }
+            ],
+            "user": {
+                "name": "umecogo",
+                "display_name": "韋利",
+                "avatar": "https:\/\/s4.pimg.tw\/avatar\/umecogo\/0\/0\/resize\/90x0.png?v=1400357068",
+                "cavatar": "https:\/\/s4.pimg.tw\/avatar\/umecogo\/0\/0\/zoomcrop\/90x90.png?v=1400357068",
+                "link": "http:\/\/umecogo.pixnet.net",
+                "is_vip": false,
+                "has_ad": true
+            }
+        }
+			];
+			//XmlHttpRequest
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://emma.pixnet.cc/mainpage/blog/categories/hot/19?page=1&per_page=10&api_version=2&format=json";
+
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var jsonData = JSON.parse(this.responseText);
+					display(jsonData);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+			
+			function display(jsonData){
+				var list = jsonData.articles;
+				var str = "";
+				var i;
+				for (i = 0 ; i < list.length ; i++){
+					str += "<li class='collection-item avatar dismissable'>";
+					str += "<img src='" + list[i].thumb + "' class='circle'/>";
+					str += "<span class='title'>" + list[i].title + "</span>";
+					str += "<p class='red-text'>" + list[i].summary + "</p>";
+					str += "<a href='" + list[i].link + "' class='secondary-content'><i class='material-icons orange-text'>chevron_right</i></a>";
+					str += "</li>";
+				}
+				document.getElementById("display").innerHTML = str;
+			}
+		</script>
+		<footer class="page-footer orange">
+			<div class="footer-copyright">
+				<div class="container">
+					MIT License
+					<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+				</div>
+			</div>
+        </footer>
+	</body>
+</html>
