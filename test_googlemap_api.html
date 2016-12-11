@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        width: 80%;
+        height: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+function initMap() {
+  var myLatLng = {lat: 24.120844, lng: 120.674287};
+
+  var map1 = new google.maps.Map(document.getElementById('map'), {
+    zoom: 17,
+    center: myLatLng
+  });
+
+  var marker1 = new google.maps.Marker({
+    position: myLatLng,
+    map: map1,
+    title: '波浪符1'
+  });
+  
+  var marker2 = new google.maps.Marker({
+    position: {lat: 24.12316, lng: 120.6744},
+    map: map1,
+    title: '波浪符2'
+  });
+  
+}
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+  </body>
+</html>
