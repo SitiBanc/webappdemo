@@ -23,28 +23,21 @@
 	<body>
 		<div id="display_map"></div>
 		<div>
-			<ul id="display_list" class="collection z-depth-4"></ul>
+			<ul id="display_list" class="collection"></ul>
 		</div>
 		<script>
 			// The markers are stored in an array.
 			var map1;
 			var markers = [];
-			var loc =[
-						{lat: 24.12249, lng: 120.6762},
-						{lat: 24.12225, lng: 120.6743},
-						{lat: 24.12112, lng: 120.6771},
-						{lat: 24.12316, lng: 120.6744},
-						{lat: 24.12177, lng: 120.6727},
-						{lat: 24.11988, lng: 120.6743}
-					];
+			var i,str = "";
 			//JSON Array
 			var list = [
-					{"title":"title1","label":"1","loc":{lat: 24.12249, lng: 120.6762},"link":""},
-					{"title":"title2","label":"2","loc":{lat: 24.12225, lng: 120.6743},"link":""},
-					{"title":"title3","label":"3","loc":{lat: 24.12112, lng: 120.6771},"link":""},
-					{"title":"title4","label":"4","loc":{lat: 24.12316, lng: 120.6744},"link":""},
-					{"title":"title5","label":"5","loc":{lat: 24.12177, lng: 120.6727},"link":""},
-					{"title":"title6","label":"6","loc":{lat: 24.11988, lng: 120.6743},"link":""}
+					{"title":"電機大樓","label":"1","loc":{lat: 24.12249, lng: 120.6762}},
+					{"title":"行政中心","label":"2","loc":{lat: 24.12225, lng: 120.6743}},
+					{"title":"計資中心","label":"3","loc":{lat: 24.12112, lng: 120.6771}},
+					{"title":"黑森林","label":"4","loc":{lat: 24.12316, lng: 120.6744}},
+					{"title":"綜合教學大樓","label":"5","loc":{lat: 24.12177, lng: 120.6727}},
+					{"title":"圖書館","label":"6","loc":{lat: 24.11988, lng: 120.6743}}
 					];
 			
 			function initMap() {
@@ -52,14 +45,14 @@
 				map1 = new google.maps.Map(document.getElementById('display_map'), {
 					zoom: 16,
 					center: centerLoc,
-					mapTypeId: google.maps.MapTypeId.TERRAIN
+					mapTypeId: google.maps.MapTypeId.ROAD
 			  });
 
 				// Adds a marker at the center of the map.
-				addMarker(centerLoc,"C","Center");
+				addMarker(centerLoc,"C","中興湖");
 			  
 				//使用迴圈呼叫addMarker()來增加多個marker
-				for(var i=0;i<loc.length;i++){
+				for(i=0;i<list.length;i++){
 					addMarker(list[i].loc,list[i].label,list[i].title);
 				}
 			  
@@ -75,6 +68,17 @@
 				});
 			  markers.push(marker);
 			}
+			
+			//產生collections
+			for (i = 0 ; i < list.length ; i++){
+				str += "<li class='collection-item z-depth-4'><div>";
+				str += "<span class='title'>" + list[i].label + "</span>";
+				str += "<a href='http://maps.google.com.tw/maps?f=q&hl=zh-TW&q=" + list[i].loc.lat + "," + list[i].loc.lng + "&z=16&t=q" + list[i].link + "' class='secondary-content'><i class='material-icons orange-text'>chevron_right</i></a>";
+				str += "<p class='red-text'>" + list[i].title + "</p>";
+				str += "</div></li>";
+			}
+			document.getElementById("display_list").innerHTML = str;
+			
 		</script>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
 	</body>
