@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Street View side-by-side</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map, #pano {
+        float: left;	/*使用float讓兩個div緊鄰著顯示*/
+        height: 100%;
+        width: 45%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="pano"></div>
+    <script>
+
+function initialize() {
+  var NCHU = {lat: 24.121521, lng: 120.673601};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: NCHU,
+    zoom: 16
+  });
+  var panorama = new google.maps.StreetViewPanorama(
+      document.getElementById('pano'), {
+        position: NCHU,
+        pov: {
+          heading: 220.78,
+          pitch: 16.8
+        }
+      });
+  map.setStreetView(panorama);	//使街景和地圖連動
+}
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?callback=initialize">
+    </script>
+  </body>
+</html>
