@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>收藏預告片</title>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			/*Import Noto Sans Font*/
+			@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css); 
+			*{font-family: 'Noto Sans TC', sans-serif;}
+			
+			header, main, footer {
+				padding-left: 300px;
+			}
+
+			a.page-title {
+				font-size: 28px;
+			}
+
+			@media only screen and (max-width : 992px) {
+				header, main, footer {
+					padding-left: 0;
+				}
+				nav .nav-wrapper a.page-title {
+					font-size: 22px;
+				}
+				#player iframe {
+				height: 320px;
+				}
+			}
+			
+			#player iframe {
+				height: 540px;
+				width: 100%;
+			}
+		</style>
+		
+		<script type="text/javascript" language="javascript">
+			function videopanel(id) { 
+				str = '<iframe id="player" src="https://www.youtube.com/embed/' + id + '" frameborder="0" allowfullscreen></iframe>';
+				return str;
+			}
+
+			function videochange(id) {
+				document.getElementById("player").innerHTML = videopanel(id);		
+			}
+      </script>
+	</head>
+	<body onload>
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<header>
+			<!-- Navbar -->
+			<div class="navbar-fixed">
+				<nav class="cyan">
+					<a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
+					<div class="nav-wrapper container">
+						<a href="movie_potato.html" class="breadcrumb page-title">電影馬鈴薯</a>
+						<a class="breadcrumb page-title">收藏預告片</a>
+				  </div>
+				</nav>
+			</div>
+			<!-- Sidenav panel -->
+			<ul id="slide-out" class="side-nav fixed">
+				<li>
+					<div class="userView">
+						<div class="background">
+							<img src="images/sky.jpg">
+						</div>
+						<a><img class="circle" src="images/potato_inside.png"></a>
+						<a><span class="white-text name">Movie Potato</span></a>
+						<a><span class="white-text email">movie_potato@gmail.com</span></a>
+					</div>
+				</li>
+				<li><a class="waves-effect" href="nearby_theater.html"><i class="material-icons">place</i>附近電影院</a></li>
+				<li><a class="waves-effect" href="hot_review.html"><i class="material-icons">grade</i>熱門影評</a></li>
+				<li><a class="waves-effect" href="#!"><i class="material-icons">credit_card</i>線上訂票</a></li>
+				<li><a class="waves-effect" href="#!"><i class="material-icons">redeem</i>優惠專區</a></li>
+				<li><div class="divider"></div></li>
+				<li><a class="waves-effect" href="fav_trailer.html"><i class="material-icons">theaters</i>收藏預告片</a></li>
+				<li><a class="waves-effect" href="#!"><i class="material-icons">comment</i>評論紀錄</a></li>
+				<li><a class="waves-effect" href="#!"><i class="material-icons">receipt</i>訂票紀錄</a></li>
+				<li><a class="waves-effect" href="#!"><i class="material-icons">watch_later</i>想看清單</a></li>
+				<li><div class="divider"></div></li>
+				<li><a class="waves-effect" href="#!"><i class="material-icons">settings</i>設定</a></li>
+				<li><a class="waves-effect" href="#!"><i class="material-icons">help</i>幫助</a></li>
+				<li><a class="waves-effect" href="#!"><i class="material-icons">info</i>關於 電影馬鈴薯</a></li>
+			</ul>
+		</header>
+		<main>
+			<div id="player">
+				<iframe src="https://www.youtube.com/embed/iFYLuXGc5RY" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<div>
+				<ul id="display_list" class="collection"></ul>
+			</div>
+		</main>
+		
+		<script>
+			//Video list stored in JSON array
+			var list = [
+					{"title":"【星際大戰外傳：俠盜一號】官方預告 2016年12月14日搶先全美 ","id":"iFYLuXGc5RY"},
+					{"title":"【同盟鶼鰈】展現篇廣告-1月6日 侵密愛人 ","id":"09JyBJK-uLU"},
+					{"title":"【星際過客】前導預告  ","id":"Hu5ZClP1srM"},
+					{"title":"【樂來越愛你】 La La Land 精彩預告 ~ 2016/12/9 墜入情網 ","id":"BxVgy5xNtEk"},
+					{"title":"【最美的安排】中文官方前導預告，12月15日(週四) 與你連結 ","id":"nREMSEe2e8g"},
+					{"title":"【11/11 比利‧林恩的中場戰事】首波幕後製作花絮揭密 ","id":"pN5qDCVErDw"}
+					];
+			//Create video list collection
+			var str = "";
+			for (i = 0 ; i < list.length ; i++){
+				str += "<li class='collection-item dismissable'><div>";
+				str += "<a href='";
+				str += "javascript:videochange(\"" + list[i].id + "\")\'>";
+				str += "<span class='title'>" + list[i].title + "</span><i class='material-icons cyan-text' style='float: right;'>chevron_right</i></a>";
+				str += "</div></li>";
+			}
+			document.getElementById("display_list").innerHTML += str;
+			// Initialize collapse button
+			$(".button-collapse").sideNav();
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?libraries=places" async defer></script>
+	</body>
+</html>
